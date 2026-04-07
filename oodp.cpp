@@ -956,3 +956,184 @@
 
 
 
+// MULTIPLE INHERITANCE SYNTAX
+
+
+// class baseclass1{
+
+// };
+
+// class baseclass2{
+
+// };
+
+// class derivedclass:accessspecifier baseclass1, accessspecifier baseclass2{
+
+// };
+
+
+
+
+
+
+// MULTIPLE INHERITANCE EXAMPLE
+
+// #include<iostream>
+// using namespace std;
+// class movement{
+//     public:
+//         void move(){
+//             cout<<"Vehicle is moving"<<endl;
+//         }
+// };
+
+// //base class is representing a vehicle's fuel related functionalities
+
+// class fuel{
+//     public:
+//         void refillfuel(){
+//             cout<<"Refill fuel"<<endl;
+//         }
+// };
+
+// //derived class representing a car, which inherits from both movement and fuel
+
+// class car: public movement, public fuel{
+//     public:
+//         void honk(){
+//             cout<<"Car is honking"<<endl;
+//         }
+// };
+
+// int main(){
+//     car mycar;
+//     mycar.move();
+//     mycar.refillfuel();
+//     mycar.honk();
+//     return 0;
+// }
+
+
+
+
+
+//EXAMPLE OF DUPLICATION
+
+
+// int maxint(int a, int b){
+//     return(a>b)?a:b;
+// }
+
+// double maxdouble(double a, double b){
+//     return(a>b)? a:b;
+// }
+
+
+
+
+//GENERIC SWAP FUNCTION
+
+// #include<iostream>
+// using namespace std;
+// template <typename T>
+// void swapValue(T &a, T &b){
+//     T temp = a;
+//     a=b;
+//     b=temp;
+// }
+// int main(){
+//     int x=10, y=20;
+//     cout<<"Before Swap : x = "<<x<<", y= "<<y<<endl;
+//     swapValue(x,y);
+//     cout<<"After Swap: x ="<<x<<", y ="<<y<<endl;
+//     return 0;
+// }
+
+
+
+
+
+//VIRTUAL FUNCTION
+// class Base {
+// public:
+//     virtual void show() {
+//         cout << "This is Base class show function" << endl;
+//     }
+// };
+
+
+
+// #include <iostream>
+// using namespace std;
+
+// class Base {
+// public:
+//     virtual void show() {
+//         cout << "Base class show function" << endl;
+//     }
+// };
+
+// class Derived : public Base {
+// public:
+//     void show() {
+//         cout << "Derived class show function" << endl;
+//     }
+// };
+
+// int main() {
+//     Base* b;
+//     Derived d;
+//     b = &d;
+
+//     b->show();  // Calls Derived's show()
+//     return 0;
+// }
+
+
+
+
+
+
+
+// #include <iostream>
+// using namespace std;
+
+// class Base {
+// public:
+//     virtual void show() {
+//         cout << "This is Base class show function." << endl;
+//     }
+// };
+
+// class Derived1 : public Base {
+// public:
+//     void show() {
+//         cout << "This is Derived1 class show function." << endl;
+//     }
+// };
+
+// class Derived2 : public Base {
+// public:
+//     void show() {
+//         cout << "This is Derived2 class show function." << endl;
+//     }
+// };
+
+// int main() {
+//     Base* ptr;
+//     Base b1;
+//     Derived1 d1;
+//     Derived2 d2;
+
+//     ptr = &b1;
+//     (*ptr).show();
+
+//     ptr = &d1;
+//     ptr->show();   // Calls Derived1's show()
+
+//     ptr = &d2;
+//     (*ptr).show();   // Calls Derived2's show()
+
+//     return 0;
+// }
+
